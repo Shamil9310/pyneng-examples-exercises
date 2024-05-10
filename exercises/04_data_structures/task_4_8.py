@@ -26,3 +26,12 @@
 """
 
 ip = "192.168.3.1"
+oct_1 = int(ip[0:3])
+oct_2 = int(ip[4:7])
+oct_3 = int(ip[8:9])
+oct_4 = int(ip[-1])
+ip_bin = '{:08b}   {:08b}   {:08b}   {:08b}'.format(oct_1,oct_2,oct_3,oct_4)
+ip_format = '{:<10} {:<10} {:<10} {:<10}'.format(oct_1,oct_2,oct_3,oct_4)
+result = (f'{ip_format}\n'
+          f'{ip_bin}')
+print(result)

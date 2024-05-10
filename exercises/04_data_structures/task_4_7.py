@@ -16,3 +16,8 @@
 """
 
 mac = "AAAA:BBBB:CCCC"
+mac_1 = bin(int(mac[0:4], 16))
+mac_2 = bin(int(mac[5:9], 16))
+mac_3 = bin(int(mac[10:14], 16))
+result = mac_1[2:]+mac_2[2:]+mac_3[2:]
+print(result)

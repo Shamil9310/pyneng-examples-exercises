@@ -21,11 +21,13 @@ ospf_route. Значения из строки ospf_route надо получи�
 """
 
 ospf_route = "      10.0.24.0/24 [110/41] via 10.0.13.3, 3d18h, FastEthernet0/0"
-template =
-Prefix                {}
-AD/Metric             {}
-Next-Hop              {}
-Last update           {}
-Outbound Interface    {}
-"""
-print(ospf_route.find('10'))
+ospf_route = ospf_route.strip()
+template ='''
+Prefix                {ip_addr}
+AD/Metric             {metric}
+Next-Hop              {next}
+Last update           {last}
+Outbound Interface    {int}
+'''
+template = template.format(ip_addr="10.0.24.0/24", metric="110/41", next="10.0.13.3", last="3d18h", int="FastEthernet0/0")
+print(template)
